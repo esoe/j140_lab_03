@@ -6,15 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxtableexampledist.FXMLMainController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.molokoin.PersonsController">
     <children>
         <TableView onMouseClicked="#handleClickedAction" onKeyPressed="#handleKeyPressedAction" fx:id="table" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <columns>
-              <TableColumn fx:id="idCol" prefWidth="100" text="ИД" /> 
-              <TableColumn fx:id="firstCol" prefWidth="200" text="Имя" /> 
-              <TableColumn fx:id="lastCol" prefWidth="200" text="Фамилия" /> 
-              <TableColumn fx:id="genderCol" prefWidth="150" text="Пол" /> 
-              <TableColumn fx:id="countCol" prefWidth="50" text="Кол-во" /> 
+              <TableColumn fx:id="idColumn" prefWidth="50" text="id" /> 
+              <TableColumn fx:id="jobtitleColumn" prefWidth="200" text="profession" /> 
+              <TableColumn fx:id="firstnamelastnameColumn" prefWidth="200" text="name" /> 
+              <TableColumn fx:id="phoneColumn" prefWidth="50" text="phone" /> 
+              <TableColumn fx:id="emailColumn" prefWidth="50" text="email" />
+              <TableColumn fx:id="domainsCountColumn" prefWidth="15" text="domainsCount" /> 
           </columns>
       </TableView>
     </children>

@@ -6,19 +6,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="110" prefWidth="200" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.molokoin.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="-Infinity" prefWidth="300" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.molokoin.LoginController">
     <children>
-        <AnchorPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-            <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                <Label text="login:"/>
-                <TextField/>
-                <Label text="password:"/>
-                <PasswordField/>
-            </VBox>
-        </AnchorPane>
-        <AnchorPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
-            <Button text="sign in" onAction="#login" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
-        </AnchorPane>
-        
+        <VBox id="VBox" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+            <Label text="Имя пользователя:"/>
+            <TextField fx:id="loginField"/>
+            <Label text="Пароль:"/>
+            <PasswordField fx:id="passwordField"/>
+            <Button text="Проверить ..." onAction="#login" prefHeight="Infinity" prefWidth="Infinity">
+                <style>
+                    <!-- -fx-padding: 20; -->
+                    <!-- -fx-border-width: 5; -->
+                </style>
+            </Button>
+        </VBox>
     </children>
 </AnchorPane>
