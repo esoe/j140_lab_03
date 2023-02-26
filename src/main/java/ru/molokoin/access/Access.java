@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.access;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -68,5 +68,4 @@ public class Access {
         System.out.println(acc.getLogin());
         System.out.println(acc.getPassword());
     }
-
 }

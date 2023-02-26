@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.persons;
 
 import java.net.URL;
 import java.util.List;
@@ -36,23 +36,23 @@ public class PersonsController implements Initializable{
     @FXML
     private void handleClickedAction(MouseEvent event) {
         if(event.getClickCount()==2){
-            //openEducationStage();
+            openDomainsStage();
             System.out.println("Инициирован показ данных о доменах ...");
         }
     }
     @FXML
     private void handleKeyPressedAction(KeyEvent event){
         if(event.getCode()==KeyCode.ENTER){
-            //openEducationStage();
+            openDomainsStage();
             System.out.println("Инициирован показ данных о доменах ...");
         }
     }
-    // private void openEducationStage(){
-    //     Repository repository = new Repository();
-    //         int idperson = table.getSelectionModel().getSelectedItem().getId();
-    //         Person person = repository.findPersonById(idperson);
-    //         new EducationStage().init(person);
-    // }
+    private void openDomainsStage(){
+        //Base repository = new Base();
+            // int idperson = table.getSelectionModel().getSelectedItem().getId();
+            // Person person = repository.getPersons();
+            // new DomainsStage().init(person);
+    }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {

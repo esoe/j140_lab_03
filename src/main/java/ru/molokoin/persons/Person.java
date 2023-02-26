@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.persons;
 
 public class Person {
     private int id;

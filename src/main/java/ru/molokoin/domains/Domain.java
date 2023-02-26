@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.domains;
 
 public class Domain {
     private int id;

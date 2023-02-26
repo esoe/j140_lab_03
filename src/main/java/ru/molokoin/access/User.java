@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.access;
 
 public class User {
     private String name;

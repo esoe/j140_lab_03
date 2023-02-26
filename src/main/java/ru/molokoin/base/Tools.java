@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.base;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,12 +10,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ru.molokoin.access.Access;
+import ru.molokoin.access.User;
+import ru.molokoin.domains.Domain;
+import ru.molokoin.persons.Person;
+
 /**
  * Реализация подключения к базе данных для работы с таблицами
  * - чтение настроек подключения из файла assess.prop
  * 
  */
-public class Base {
+public class Tools {
     private static Access access = new Access("property\\access.prop");//путь к файлу настроек
     public boolean granted = false;//права пользователя подтверждены
     /**
