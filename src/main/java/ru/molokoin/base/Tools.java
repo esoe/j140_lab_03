@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ru.molokoin.CoverDomain;
+import ru.molokoin.CoverPerson;
 import ru.molokoin.access.Access;
 import ru.molokoin.access.User;
-import ru.molokoin.domains.Domain;
-import ru.molokoin.persons.Person;
 
 /**
  * Реализация подключения к базе данных для работы с таблицами
@@ -57,8 +57,8 @@ public class Tools {
      * 
      * @return
      */
-    public static List<Person> getPersons(){
-        List<Person> persons = new ArrayList<>();
+    public static List<CoverPerson> getPersons(){
+        List<CoverPerson> persons = new ArrayList<>();
         //лучше читать запрос из файла, но тут незачем ...
         String query = "SELECT person.id, person.jobtitle, person.firstnamelastname, person.phone, person.email, COUNT(domains.personid) as domainsCount FROM person INNER JOIN domains ON domains.personid = person.id GROUP BY person.id";
         Connection con = null;
@@ -69,7 +69,7 @@ public class Tools {
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
             while(rs.next()){
-                Person current = new Person(rs.getInt("id"),
+                CoverPerson current = new CoverPerson(rs.getInt("id"),
                                             rs.getString("jobtitle"),
                                             rs.getString("firstnamelastname"),
                                             rs.getString("phone"),
@@ -83,8 +83,8 @@ public class Tools {
         return persons;
     }
 
-    public static List<Domain> getDomains(int personid){
-        List<Domain> domains = new ArrayList<>();
+    public static List<CoverDomain> getDomains(int personid){
+        List<CoverDomain> domains = new ArrayList<>();
         String query = "SELECT domains.id, domains.webname, domains.domainname, domains.ip, domains.datereg, domains.countryreg, domains.personid FROM domains WHERE domains.personid=" + personid;
         Connection con = null;
         Statement stmt = null;
@@ -109,7 +109,7 @@ public class Tools {
 
                 String countryreg = rs.getString("countryreg");
                 int pid = rs.getInt("personid");
-                Domain domain = new Domain(id, webname, domainname, ip, datereg, countryreg, pid);
+                CoverDomain domain = new CoverDomain(id, webname, domainname, ip, datereg, countryreg, pid);
                 domains.add(domain);
             }
         }catch (SQLException e) {
