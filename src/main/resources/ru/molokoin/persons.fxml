@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import ru.molokoin.login.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="-Infinity" prefWidth="300" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.molokoin.persons.Controller">
+    <children>
+        <VBox id="VBox" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+            <Label text="Отображаем таблицу данных пользователей"/>
+            <Button text="Показать домены ..." onAction="#info" prefHeight="Infinity" prefWidth="Infinity">
+                <style>
+                    <!-- -fx-padding: 20; -->
+                    <!-- -fx-border-width: 5; -->
+                </style>
+            </Button>
+        </VBox>
+    </children>
+</AnchorPane>

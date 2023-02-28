@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import ru.molokoin.login.Frame;
 
 import java.io.IOException;
 
@@ -12,17 +13,20 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
-
-    private static Scene scene;
-
+    public static Scene scene;
+    public static final String FXML_LOGIN = "login";
+    public static final String FXML_PERSONS = "persons";
+    public static final String FXML_DOMAINS = "domains";
+    
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML(FXML_LOGIN));
+        //stage.setTitle("Авторизация");
         stage.setScene(scene);
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
