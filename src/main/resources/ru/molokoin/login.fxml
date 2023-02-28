@@ -5,9 +5,8 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import ru.molokoin.login.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="-Infinity" prefWidth="300" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.molokoin.login.Controller">
+<AnchorPane id="AnchorPane" prefHeight="-Infinity" prefWidth="300" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.molokoin.ControllerLogin">
     <children>
         <VBox id="VBox" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
             <Label text="Имя пользователя:"/>

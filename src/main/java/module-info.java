@@ -5,7 +5,4 @@ module ru.molokoin {
 
     opens ru.molokoin to javafx.fxml;
     exports ru.molokoin;
-    exports ru.molokoin.login;
-    exports ru.molokoin.domains;
-    exports ru.molokoin.persons;
 }

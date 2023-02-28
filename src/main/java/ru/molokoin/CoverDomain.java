@@ -1,6 +1,7 @@
 package ru.molokoin;
 
 public class CoverDomain {
+    
     private int id;
     private String webname;
     private String domainname;

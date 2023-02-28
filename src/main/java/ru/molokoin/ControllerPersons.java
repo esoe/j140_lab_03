@@ -17,6 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
+
 public class ControllerPersons implements Initializable{
     @FXML
     private TableView<CoverPerson> table;
@@ -48,16 +49,21 @@ public class ControllerPersons implements Initializable{
         }
     }
     private void openDomainsStage(){
-        //Base repository = new Base();
-            // int idperson = table.getSelectionModel().getSelectedItem().getId();
-            // Person person = repository.getPersons();
-            // new DomainsStage().init(person);
+        int idperson = table.getSelectionModel().getSelectedItem().getId();
+        List<CoverDomain> domains = Repository.getDomains(idperson);
+        new StageDomains().init(domains);
     }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'initialize'");
+        List<CoverPerson> persons = Repository.getPersons();
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        jobtitleColumn.setCellValueFactory(new PropertyValueFactory<>("jobtitle"));
+        firstnamelastnameColumn.setCellValueFactory(new PropertyValueFactory<>("firstnamelastname"));
+        phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+        domainsCountColumn.setCellValueFactory(new PropertyValueFactory<>("domainsCount"));
+        table.setItems(FXCollections.observableArrayList(persons));
     }
     
 }

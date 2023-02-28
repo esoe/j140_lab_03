@@ -8,5 +8,6 @@ public class ControllerLogin {
     public void login() throws IOException {
         System.out.println("Инициирована авторизация пользователя ...");
         System.out.println("Открываем таблицу Persons ...");
+        new StagePersons().init();
     }
 }
