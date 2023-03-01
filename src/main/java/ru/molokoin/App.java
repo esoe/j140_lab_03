@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ru.molokoin.login.Frame;
 
 import java.io.IOException;
 
@@ -13,26 +12,18 @@ import java.io.IOException;
  * JavaFX App
  */
 public class App extends Application {
-    public static Scene scene;
-    public static final String FXML_LOGIN = "login";
-    public static final String FXML_PERSONS = "persons";
-    public static final String FXML_DOMAINS = "domains";
+    //public static final String FXML_LOGIN = "login.fxml";
+    public static final String FXML_PERSONS = "persons.fxml";
+    public static final String FXML_DOMAINS = "domains.fxml";
     
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML(FXML_LOGIN));
-        //stage.setTitle("Авторизация");
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("login.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setTitle("Авторизация");
         stage.setScene(scene);
         stage.show();
-    }
-
-    public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
     }
 
     public static void main(String[] args) {
