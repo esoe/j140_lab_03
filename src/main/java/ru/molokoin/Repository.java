@@ -58,7 +58,7 @@ public class Repository {
     public static List<CoverPerson> getPersons(){
         List<CoverPerson> persons = new ArrayList<>();
         //лучше читать запрос из файла, но тут незачем ...
-        String query = "SELECT person.id, person.jobtitle, person.firstnamelastname, person.phone, person.email, COUNT(domains.personid) as domainsCount FROM person INNER JOIN domains ON domains.personid = person.id GROUP BY person.id";
+        String query = "SELECT person.id, person.jobtitle, person.firstnamelastname, person.phone, person.email, COUNT(domains.personid) as domainsCount FROM person LEFT JOIN domains ON domains.personid = person.id GROUP BY person.id";
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
